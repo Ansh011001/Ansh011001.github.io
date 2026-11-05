@@ -1,0 +1,798 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Ansh Datir Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ansh Datir is a Data Analyst and M.S. Data Science student at Rutgers University, working across healthcare analytics, business intelligence and applied AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: split hero (photo bleeds left, copy right), then a single editorial column of ruled rows; one dark contact band closes the page. */
+:root{
+  --bg:#f1f0eb;
+  --surface:#e7e5de;
+  --ink:#1a1a18;
+  --muted:#5b5a55;
+  --rule:#d5d2c9;
+  --accent:#2c5a4b;
+  --accent-soft:#dae5df;
+  --on-ink:#f1f0eb;
+  --on-ink-muted:#b4b2aa;
+  --on-ink-rule:rgba(241,240,235,.18);
+  --accent-on-ink:#a3cbb9;
+  --serif:'Instrument Serif','Iowan Old Style','Times New Roman',serif;
+  --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+img{max-width:100%}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::selection{background:var(--accent);color:var(--on-ink)}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:16px;z-index:100;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;text-decoration:none}
+.label{font:500 12px/1.5 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.wrap{max-width:1320px;margin-inline:auto;padding-left:max(clamp(16px,4vw,56px),env(safe-area-inset-left,0px));padding-right:max(clamp(16px,4vw,56px),env(safe-area-inset-right,0px))}
+.icon{width:16px;height:16px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 26px;border-radius:999px;font:500 16px/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background-color .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .2s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn-dark:hover{background:var(--accent);border-color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#b3b0a6}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover .i-down{transform:translateY(3px)}
+.btn:hover .i-right,.text-link:hover .i-right{transform:translateX(4px)}
+.btn:hover .i-out,.text-link:hover .i-out{transform:translate(2px,-2px)}
+.btn-sm{min-height:44px;padding:0 20px;font-size:15px}
+.text-link{display:inline-flex;align-items:center;gap:8px;font-weight:500;text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .4s var(--ease)}
+.text-link:hover{background-size:100% 1px}
+
+/* Navigation */
+.site-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(241,240,235,.86);-webkit-backdrop-filter:saturate(1.3) blur(14px);backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.site-nav.scrolled{border-bottom-color:var(--rule)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:68px}
+.brand{font:400 27px/1 var(--serif);text-decoration:none;letter-spacing:-.01em}
+.brand span{color:var(--accent);font-style:italic}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{position:relative;display:inline-block;font:500 15px/1 var(--sans);color:var(--muted);text-decoration:none;padding:14px 0;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--ink)}
+.nav-links a:hover::after,.nav-links a[aria-current="true"]::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.menu-btn{display:none;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #b3b0a6;background:transparent;color:var(--ink);font:500 15px/1 var(--sans);cursor:pointer}
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none}
+.progress span{display:block;height:100%;background:var(--accent);transform-origin:left;transform:scaleX(0)}
+.mobile-menu{border-top:1px solid var(--rule)}
+.mobile-menu ul{list-style:none;margin:0;padding:8px 0 20px}
+.mobile-menu a{display:flex;justify-content:space-between;align-items:center;padding:14px 0;font:400 32px/1.1 var(--serif);text-decoration:none;border-bottom:1px solid var(--rule)}
+@media (max-width:880px){.nav-links,.nav-cta{display:none}.menu-btn{display:inline-flex}}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);border-bottom:1px solid var(--rule)}
+.hero-photo{position:relative;margin:0;min-height:700px;overflow:hidden;background:#b8a283}
+.photo-clip{position:absolute;inset:0;overflow:hidden}
+.photo-clip img{display:block;width:100%;height:100%;object-fit:cover;object-position:32% 38%;transform:scale(1.08) translateY(var(--py,0px));will-change:transform}
+.hero-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(12,12,10,.6),rgba(12,12,10,0));pointer-events:none}
+.hero-photo figcaption{position:absolute;z-index:1;left:clamp(20px,4vw,48px);bottom:clamp(20px,4vw,44px);display:flex;flex-direction:column;gap:8px;color:#f6f4ee}
+.hero-photo figcaption .label{color:rgba(246,244,238,.88)}
+.cap-name{font:400 36px/1 var(--serif)}
+.hero-copy{min-width:0;display:flex;flex-direction:column;justify-content:center;gap:28px;padding-block:clamp(56px,7vw,112px);padding-left:clamp(24px,5.5vw,96px);padding-right:max(clamp(16px,5vw,88px),env(safe-area-inset-right,0px))}
+.status{display:flex;align-items:center;gap:14px;color:var(--ink)}
+.pulse{position:relative;width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.pulse::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--accent);animation:ping 2.4s ease-out infinite}
+@keyframes ping{from{transform:scale(.5);opacity:.9}to{transform:scale(2.1);opacity:0}}
+.hero-title{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(68px,9.4vw,152px);line-height:.88;letter-spacing:-.025em}
+.hero-title .line{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+.hero-title .line>span{display:inline-block}
+.hero-title em{color:var(--accent);font-style:italic}
+.hero-lede{font-size:clamp(17px,1.3vw,19px);line-height:1.7;color:var(--muted);max-width:35em}
+.hero-lede strong{color:var(--ink);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-exp{max-width:640px;margin-top:12px}
+.hero-exp-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.exp-row{display:grid;grid-template-columns:150px minmax(0,1fr) auto 18px;gap:6px 20px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.exp-row .when{font:400 13px/1.5 var(--mono);color:var(--muted)}
+.exp-row .what{transition:transform .4s var(--ease)}
+.exp-row .what strong{font-weight:600}
+.exp-row .where{font-size:15px;color:var(--muted)}
+.exp-row:hover .what{transform:translateX(6px)}
+.exp-row:hover .i-right{transform:translateX(4px)}
+@media (max-width:980px){.hero{grid-template-columns:1fr}.hero-photo{min-height:0;aspect-ratio:4/5;max-height:720px;max-width:100%}}
+@media (max-width:620px){.exp-row{grid-template-columns:minmax(0,1fr) 18px}.exp-row .when,.exp-row .where{grid-column:1}.exp-row .icon{grid-column:2;grid-row:1/4;align-self:center}}
+
+/* Marquee */
+.marquee{overflow:hidden;border-bottom:1px solid var(--rule);padding-block:30px}
+.marquee-track{display:flex;width:max-content;animation:marquee 42s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-group{display:flex;align-items:center;gap:56px;padding-right:56px;flex:none}
+.marquee-item{font:400 clamp(44px,6vw,88px)/1 var(--serif);letter-spacing:-.02em;white-space:nowrap}
+.marquee-item em{color:var(--accent)}
+.marquee-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Sections */
+.section{padding-block:clamp(88px,10vw,152px);border-bottom:1px solid var(--rule);scroll-margin-top:60px}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:20px 56px;align-items:end;margin-bottom:clamp(44px,5vw,76px)}
+.section-head .label{align-self:start;padding-top:14px}
+.h2{margin:0;font:400 clamp(50px,6.6vw,104px)/.94 var(--serif);letter-spacing:-.025em;text-wrap:balance}
+.h2 em{color:var(--accent)}
+.intro{color:var(--muted);max-width:38em;margin-top:22px}
+@media (max-width:820px){.section-head{grid-template-columns:1fr}.section-head .label{padding-top:0}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:40px 56px}
+.lead{font:400 clamp(24px,2.4vw,34px)/1.3 var(--serif);letter-spacing:-.005em;max-width:30em;text-wrap:pretty}
+.lead em{color:var(--accent)}
+.about-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:40px 48px;margin-top:56px}
+.block h3{margin:0 0 6px}
+.entry{padding:16px 0;border-top:1px solid var(--rule)}
+.entry .t{font-weight:600}
+.entry .s{color:var(--muted);font-size:15px}
+.entry .d{font:400 13px/1.6 var(--mono);color:var(--accent);margin-top:4px}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:0 32px;margin-top:clamp(64px,7vw,104px);border-top:1px solid var(--ink)}
+.fact{padding:28px 0 8px;display:flex;flex-direction:column;gap:10px}
+.fact .fig{font:400 clamp(60px,6vw,88px)/.9 var(--serif);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fact .fig .u{color:var(--accent);font-style:italic}
+.fact p{font-size:15px;line-height:1.5;color:var(--muted);max-width:16em}
+
+/* Work */
+.work-tools{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--rule);background:transparent;color:var(--ink);font:500 15px/1 var(--sans);cursor:pointer;transition:background-color .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip .n{font:400 12px/1 var(--mono);opacity:.65}
+.count{font:400 13px/1.5 var(--mono);color:var(--muted)}
+.projects{border-top:1px solid var(--ink)}
+.project{border-bottom:1px solid var(--rule)}
+.project-head{width:100%;display:grid;grid-template-columns:230px minmax(0,1fr) 48px;gap:12px 40px;align-items:start;padding:34px 0;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.project-head .label{padding-top:12px}
+.project-title{display:block;font:400 clamp(34px,3.8vw,56px)/1.02 var(--serif);letter-spacing:-.015em;transition:transform .5s var(--ease),color .3s}
+.project-sum{display:block;margin-top:10px;color:var(--muted);max-width:44em}
+.project-head:hover .project-title,.project-head[aria-expanded="true"] .project-title{color:var(--accent)}
+.project-head:hover .project-title{transform:translateX(10px)}
+.toggle{width:48px;height:48px;border-radius:50%;border:1px solid #b3b0a6;display:grid;place-items:center;transition:transform .5s var(--ease),background-color .3s,color .3s,border-color .3s}
+.toggle .icon{width:18px;height:18px}
+.project-head:hover .toggle{border-color:var(--ink)}
+.project-head[aria-expanded="true"] .toggle{transform:rotate(45deg);background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.js .project-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.js .project-body.open{grid-template-rows:1fr}
+.project-inner{overflow:hidden;min-height:0}
+.project-detail{display:grid;grid-template-columns:230px minmax(0,1fr);gap:28px 40px;padding-bottom:44px}
+.project-side{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:28px 36px}
+.detail-grid h4{margin:0 0 8px}
+.detail-grid p{color:var(--muted);font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:400 12px/1 var(--mono);padding:8px 11px;border-radius:999px;background:var(--surface);color:var(--ink)}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:20px;grid-column:1/-1;padding-top:22px;border-top:1px solid var(--rule)}
+.mini .fig{font:400 46px/1 var(--serif);color:var(--accent);font-variant-numeric:tabular-nums}
+.mini p{font-size:14px;color:var(--muted);margin-top:4px}
+.fine{font-size:14px;color:var(--muted);grid-column:1/-1}
+.soon{font:400 13px/1.5 var(--mono);color:var(--muted)}
+@media (max-width:820px){.project-head{grid-template-columns:minmax(0,1fr) 48px}.project-head .label{grid-column:1/-1;padding-top:0}.project-detail{grid-template-columns:1fr}.project-side{order:2}}
+
+/* Experience */
+.job{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:28px 56px;padding:52px 0;border-top:1px solid var(--rule);scroll-margin-top:90px;border-radius:2px}
+.job:first-of-type{border-top-color:var(--ink)}
+.job:target{animation:flash 2.2s var(--ease)}
+@keyframes flash{0%,30%{background:var(--accent-soft)}100%{background:rgba(218,229,223,0)}}
+.job-meta{position:sticky;top:110px;align-self:start;display:flex;flex-direction:column;gap:10px}
+.job-org{margin:0;font:400 clamp(38px,4.2vw,60px)/1 var(--serif);letter-spacing:-.02em}
+.job-role{font-size:20px;font-weight:600}
+.job-when{font:400 13px/1.6 var(--mono);color:var(--accent)}
+.job-body{display:flex;flex-direction:column;gap:28px;max-width:44em}
+.job-body>p{font-size:19px;line-height:1.65}
+.contrib{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.contrib li{display:grid;grid-template-columns:28px minmax(0,1fr);padding:14px 0;border-top:1px solid var(--rule);color:var(--muted)}
+.contrib li::before{content:"";width:14px;height:1px;background:var(--accent);margin-top:.85em}
+.contrib strong{color:var(--ink);font-weight:600}
+.closing{margin-top:56px;font:400 clamp(26px,2.6vw,38px)/1.25 var(--serif);max-width:28em;text-wrap:pretty}
+.closing em{color:var(--accent)}
+@media (max-width:820px){.job{grid-template-columns:1fr}.job-meta{position:static}}
+
+/* Skills */
+.skill{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,1.1fr);gap:14px 40px;padding:30px 0;border-top:1px solid var(--rule);transition:padding .5s var(--ease)}
+.skill:first-of-type{border-top-color:var(--ink)}
+.skill h3{margin:0;font:400 clamp(28px,2.6vw,38px)/1.05 var(--serif);transition:color .3s}
+.skill:hover h3{color:var(--accent)}
+.skill p{color:var(--muted);font-size:16px}
+.skill .tags{align-content:flex-start}
+.skill .tag{transition:background-color .3s,color .3s}
+.skill:hover .tag{background:var(--ink);color:var(--bg)}
+@media (max-width:900px){.skill{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--on-ink);scroll-margin-top:60px}
+.contact .label{color:var(--on-ink-muted)}
+.contact-inner{padding-block:clamp(96px,11vw,168px) 40px;display:flex;flex-direction:column;gap:36px}
+.contact h2{margin:0;font:400 clamp(60px,10vw,168px)/.88 var(--serif);letter-spacing:-.03em;text-wrap:balance}
+.contact h2 em{color:var(--accent-on-ink)}
+.contact-copy{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.9fr);gap:20px 56px}
+.contact-copy .sub{font:400 italic 26px/1.3 var(--serif);color:var(--on-ink)}
+.contact-copy p{color:var(--on-ink-muted);max-width:36em}
+.email-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;padding-block:32px;border-top:1px solid var(--on-ink-rule);border-bottom:1px solid var(--on-ink-rule)}
+.email{font:400 clamp(32px,5vw,72px)/1.05 var(--serif);letter-spacing:-.015em;color:var(--on-ink);text-decoration:none;overflow-wrap:anywhere;min-width:0;user-select:all}
+.email:hover{color:var(--accent-on-ink)}
+.btn-light{background:var(--on-ink);color:var(--ink);border-color:var(--on-ink)}
+.btn-light:hover{background:var(--accent-on-ink);border-color:var(--accent-on-ink)}
+.btn-outline-light{background:transparent;color:var(--on-ink);border-color:rgba(241,240,235,.4)}
+.btn-outline-light:hover{background:var(--on-ink);color:var(--ink);border-color:var(--on-ink)}
+.copy-wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+#copy-status{min-width:9em;color:var(--accent-on-ink)}
+.socials{display:flex;flex-wrap:wrap;gap:12px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding-top:72px;font-size:14px;color:var(--on-ink-muted)}
+.foot a{color:var(--on-ink)}
+@media (max-width:820px){.contact-copy{grid-template-columns:1fr}}
+
+/* Motion */
+@media (prefers-reduced-motion: no-preference){
+  .hero-title .line>span{animation:lineUp 1.1s var(--ease) both}
+  .hero-title .line:nth-child(2)>span{animation-delay:.12s}
+  .hero-title .line:nth-child(3)>span{animation-delay:.22s}
+  .photo-clip{animation:unveil 1.5s cubic-bezier(.75,0,.2,1) both}
+  .rise{animation:fadeUp 1s var(--ease) both}
+  .rise.d1{animation-delay:.35s}.rise.d2{animation-delay:.5s}.rise.d3{animation-delay:.65s}.rise.d4{animation-delay:.8s}
+  .js .project-body.open .project-detail{animation:fadeUp .6s .12s var(--ease) both}
+  @supports (animation-timeline: view()){
+    .reveal{animation:fadeUp linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+    .rule-draw{animation:draw linear both;animation-timeline:view();animation-range:entry 10% entry 60%;transform-origin:left}
+  }
+}
+@keyframes lineUp{from{transform:translateY(108%)}}
+@keyframes unveil{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .marquee-track{animation:none}
+  .pulse::after{animation:none;opacity:0}
+  .js .project-body{transition:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-nav" id="site-nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Ansh <span>Datir</span></a>
+    <nav aria-label="Sections">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-dark btn-sm nav-cta" href="#contact">Get in Touch</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <ul class="wrap">
+      <li><a href="#about">About <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#work">Work <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#experience">Experience <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#skills">Skills <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+      <li><a href="#contact">Contact <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></li>
+    </ul>
+  </div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <figure class="hero-photo">
+      <div class="photo-clip"><img id="hero-img" src="portrait.jpg" alt="Ansh Datir on the Brooklyn Bridge at golden hour, with the Manhattan skyline behind him" width="1200" height="1600"></div>
+      <figcaption><span class="label">Rutgers University</span><span class="cap-name">Ansh Datir</span></figcaption>
+    </figure>
+
+    <div class="hero-copy">
+      <p class="status label rise d1"><span class="pulse" aria-hidden="true"></span>Open to full-time opportunities</p>
+      <h1 class="hero-title" id="hero-title">
+        <span class="line"><span>Ansh Datir</span></span>
+        <span class="line"><span><em>Data</em></span></span>
+        <span class="line"><span><em>Analyst.</em></span></span>
+      </h1>
+      <p class="hero-lede rise d2"><strong>Turning complex data into clear, actionable insights.</strong> I'm a Data Analyst and M.S. Data Science student at Rutgers University, working with SQL, Python, Power BI, and Tableau to turn complex information into useful insights. My experience spans healthcare analytics, operational reporting, and business intelligence. Beyond analytics, I explore machine learning and AI systems through hands-on technical projects.</p>
+      <div class="actions rise d3">
+        <a class="btn btn-dark" href="#work">View My Work <svg class="icon i-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M4 9l4 4 4-4"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+      </div>
+      <div class="hero-exp rise d4">
+        <div class="hero-exp-head">
+          <span class="label">Experience</span>
+          <a class="text-link" href="#experience">Full experience <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+        <a class="exp-row" href="#exp-rutgers">
+          <span class="when">2025–Present</span>
+          <span class="what"><strong>Rutgers University</strong> · Data Analyst</span>
+          <span class="where">New Brunswick, New Jersey</span>
+          <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a class="exp-row" href="#exp-accenture">
+          <span class="when">June 2023–July 2024</span>
+          <span class="what"><strong>Accenture Solutions Pvt. Ltd.</strong> · Application Analyst</span>
+          <span class="where">Healthcare analytics</span>
+          <svg class="icon i-right" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" role="img" aria-label="Organizations: Rutgers University and Accenture Solutions Pvt. Ltd.">
+    <div class="marquee-track" aria-hidden="true">
+      <div class="marquee-group">
+        <span class="marquee-item">Rutgers University</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Accenture Solutions Pvt. Ltd.</span><span class="marquee-dot"></span>
+        <span class="marquee-item"><em>Access &amp; Disability Resources</em></span><span class="marquee-dot"></span>
+      </div>
+      <div class="marquee-group">
+        <span class="marquee-item">Rutgers University</span><span class="marquee-dot"></span>
+        <span class="marquee-item">Accenture Solutions Pvt. Ltd.</span><span class="marquee-dot"></span>
+        <span class="marquee-item"><em>Access &amp; Disability Resources</em></span><span class="marquee-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="reveal">
+          <p class="label">About</p>
+          <h2 class="h2" id="about-title" style="margin-top:20px">A little <em>about me</em></h2>
+        </div>
+        <div>
+          <p class="lead reveal">I'm a Data Analyst at Rutgers University while completing my M.S. in Data Science. Previously, I worked at Accenture on healthcare claims, utilization analysis, and operational reporting. I enjoy working through complex datasets, <em>understanding the problem behind the numbers</em>, and presenting findings in a way that others can use.</p>
+          <div class="about-cols">
+            <div class="block reveal">
+              <h3 class="label">Education</h3>
+              <div class="entry"><p class="t">M.S. in Data Science</p><p class="s">Rutgers University — New Brunswick</p><p class="d">Expected December 2026</p></div>
+              <div class="entry"><p class="t">B.E. in Electronics Design Technology</p><p class="s">Shri Ramdeobaba College of Engineering and Management</p><p class="d">2019–2023</p></div>
+            </div>
+            <div class="block reveal">
+              <h3 class="label">Certifications</h3>
+              <div class="entry"><p class="t">AWS Certified AI Practitioner</p><p class="s">Amazon Web Services</p></div>
+              <div class="entry"><p class="t">NVIDIA Certified Professional: Generative AI LLMs</p><p class="s">NVIDIA</p></div>
+            </div>
+            <div class="block reveal">
+              <h3 class="label">Now · November 2026</h3>
+              <div class="entry"><p class="s">Completing my M.S. in Data Science, graduating December 2026.</p></div>
+              <div class="entry"><p class="s">Supporting accommodation-data analysis, reporting, and dashboards at Rutgers RADR.</p></div>
+              <div class="entry"><p class="s">Looking for full-time Data Analyst and Business Intelligence roles.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="facts" aria-label="Quick facts">
+        <div class="fact reveal"><p class="fig"><span data-count="5">5</span><span class="u">K+</span></p><p>student records covered by accommodation-trend analysis</p></div>
+        <div class="fact reveal"><p class="fig"><span data-count="4">4</span></p><p>Rutgers campuses included in reporting</p></div>
+        <div class="fact reveal"><p class="fig"><span data-count="5">5</span></p><p>healthcare service lines analyzed at Accenture</p></div>
+        <div class="fact reveal"><p class="fig"><span data-count="12">12</span><span class="u">%</span></p><p>reduction in claims-collection turnaround time</p></div>
+        <div class="fact reveal"><p class="fig"><span data-count="8">8</span><span class="u">%</span></p><p>reduction in manual-processing time</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">Selected work</p>
+        <div>
+          <h2 class="h2" id="work-title">Dashboards, models &amp; <em>retrieval systems</em></h2>
+          <p class="intro">I use projects to explore how data and technology can solve practical problems. Open any project to see the challenge, the approach and the results.</p>
+        </div>
+      </div>
+
+      <div class="work-tools">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All <span class="n">6</span></button>
+          <button class="chip" type="button" data-filter="bi" aria-pressed="false">Analytics &amp; BI <span class="n">2</span></button>
+          <button class="chip" type="button" data-filter="stats" aria-pressed="false">Statistics <span class="n">1</span></button>
+          <button class="chip" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML <span class="n">3</span></button>
+        </div>
+        <p class="count" id="project-count" aria-live="polite">Showing 6 projects</p>
+      </div>
+
+      <div class="projects">
+
+        <article class="project reveal" data-cat="bi">
+          <button class="project-head" type="button" id="p1-btn" aria-expanded="false" aria-controls="p1-body">
+            <span class="label">Healthcare Analytics · Tableau</span>
+            <span><span class="project-title">Emergency Room Dashboard</span><span class="project-sum">An interactive Tableau dashboard built on about 9,200 hospital emergency department records.</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>
+          </button>
+          <div class="project-body" id="p1-body" role="region" aria-labelledby="p1-btn">
+            <div class="project-inner"><div class="project-detail">
+              <div class="project-side">
+                <div class="tags"><span class="tag">Tableau</span><span class="tag">Data Visualization</span><span class="tag">KPI Analysis</span></div>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ansh011001/Emergency-Room-Dashboard" target="_blank" rel="noopener">View on GitHub <svg class="icon i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+              </div>
+              <div class="detail-grid">
+                <div><h4 class="label">Challenge</h4><p>Emergency departments generate operational data about patient volume, waiting times, admissions, and referrals. Making these metrics easy to explore can help reveal patterns in patient flow.</p></div>
+                <div><h4 class="label">Solution</h4><p>I created a Tableau dashboard from a publicly available hospital emergency department dataset. It organizes KPIs into three interactive views (wait times, admissions, and departmental referrals) with monthly filters, conditional KPI indicators, and trend visualizations.</p></div>
+                <div><h4 class="label">Outcome</h4><p>A navigable dashboard that brings multiple emergency department performance measures into one analytical interface.</p></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-cat="bi">
+          <button class="project-head" type="button" id="p2-btn" aria-expanded="false" aria-controls="p2-body">
+            <span class="label">Business Intelligence · Excel</span>
+            <span><span class="project-title">E-Commerce Sales Analysis</span><span class="project-sum">An interactive Excel dashboard covering $2.3M+ in sales, $286K+ in profit and 9K+ orders.</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>
+          </button>
+          <div class="project-body" id="p2-body" role="region" aria-labelledby="p2-btn">
+            <div class="project-inner"><div class="project-detail">
+              <div class="project-side">
+                <div class="tags"><span class="tag">Microsoft Excel</span><span class="tag">PivotTables</span><span class="tag">Pivot Charts</span><span class="tag">Slicers</span></div>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ansh011001/excel-interactive-ecommerce-sales-dashboard" target="_blank" rel="noopener">View on GitHub <svg class="icon i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+              </div>
+              <div class="detail-grid">
+                <div><h4 class="label">Challenge</h4><p>Sales data can be difficult to interpret when revenue, profit, orders, and product performance are spread across raw records.</p></div>
+                <div><h4 class="label">Solution</h4><p>An interactive Excel dashboard combining KPI cards, sales trends, product category comparisons, geographic analysis, and slicers for exploring different segments.</p></div>
+                <div><h4 class="label">Findings</h4><p>Technology was the highest-contributing sales category, and Phones the top-selling subcategory.</p></div>
+                <div class="mini">
+                  <div><p class="fig">$2.3M+</p><p>in sales analyzed</p></div>
+                  <div><p class="fig">$286K+</p><p>in profit analyzed</p></div>
+                  <div><p class="fig">9K+</p><p>orders covered</p></div>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-cat="ai">
+          <button class="project-head" type="button" id="p3-btn" aria-expanded="false" aria-controls="p3-body">
+            <span class="label">Applied AI · Retrieval</span>
+            <span><span class="project-title">ATLAS: Graph-Aware RAG</span><span class="project-sum">A fork of ATLAS, combining PostgreSQL vector search with Neo4j knowledge graphs for research discovery.</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>
+          </button>
+          <div class="project-body" id="p3-body" role="region" aria-labelledby="p3-btn">
+            <div class="project-inner"><div class="project-detail">
+              <div class="project-side">
+                <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">Neo4j</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Docker</span></div>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ansh011001/Atlas" target="_blank" rel="noopener">Explore repository <svg class="icon i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+              </div>
+              <div class="detail-grid">
+                <div><h4 class="label">Challenge</h4><p>Finding useful information across large document collections becomes difficult when relevant facts are distributed across multiple papers and related concepts.</p></div>
+                <div><h4 class="label">System</h4><p>A graph-aware retrieval-augmented generation system: PostgreSQL and pgvector for embeddings, Neo4j for knowledge relationships, and FastAPI and React for the application interfaces.</p></div>
+                <div><h4 class="label">My involvement</h4><p>I maintain a public fork of the project as part of my exploration of graph-aware RAG systems.</p></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-cat="ai">
+          <button class="project-head" type="button" id="p4-btn" aria-expanded="false" aria-controls="p4-body">
+            <span class="label">NLP · LLM Fine-Tuning</span>
+            <span><span class="project-title">Shifting Voices</span><span class="project-sum">Teaching transformers to rewrite across six genres while preserving meaning, using Qwen 2.5 and LoRA.</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>
+          </button>
+          <div class="project-body" id="p4-body" role="region" aria-labelledby="p4-btn">
+            <div class="project-inner"><div class="project-detail">
+              <div class="project-side">
+                <div class="tags"><span class="tag">Python</span><span class="tag">Qwen 2.5</span><span class="tag">LoRA</span><span class="tag">Transformers</span><span class="tag">Sentence Embeddings</span></div>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ansh011001/Shifting-Voices" target="_blank" rel="noopener">View on GitHub <svg class="icon i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+              </div>
+              <div class="detail-grid">
+                <div><h4 class="label">Challenge</h4><p>Rewriting text into different genres requires balancing stylistic change with preservation of the original meaning.</p></div>
+                <div><h4 class="label">Approach</h4><p>A dataset of about 9,500 samples built from Project Gutenberg literary texts and GPT-4-generated rewrites, used to fine-tune Qwen with LoRA. Evaluation covers content similarity, genre classification, named-entity preservation, and perplexity.</p></div>
+                <div><h4 class="label">Outcome</h4><p>The project documentation reports improvements over the base model in in-domain evaluation, with comparisons against GPT-4.</p></div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-cat="stats">
+          <button class="project-head" type="button" id="p5-btn" aria-expanded="false" aria-controls="p5-body">
+            <span class="label">Statistics · Causal Inference</span>
+            <span><span class="project-title">Growth-Mindset Intervention</span><span class="project-sum">Estimating the effect of a growth-mindset intervention on student achievement from observational data.</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>
+          </button>
+          <div class="project-body" id="p5-body" role="region" aria-labelledby="p5-btn">
+            <div class="project-inner"><div class="project-detail">
+              <div class="project-side">
+                <div class="tags"><span class="tag">R</span><span class="tag">Regression</span><span class="tag">Propensity Scores</span><span class="tag">Causal Inference</span></div>
+                <p class="soon">Case study coming soon</p>
+              </div>
+              <div class="detail-grid">
+                <div><h4 class="label">Challenge</h4><p>Understanding the effects of educational interventions requires accounting for differences between treated and untreated student groups.</p></div>
+                <div><h4 class="label">Approach</h4><p>Regression adjustment, propensity-based techniques, covariate-balance diagnostics, cross-validation, and subgroup analysis, with results compared across alternative estimation methods.</p></div>
+                <div class="mini">
+                  <div><p class="fig">≈0.41</p><p>adjusted treatment effect, in standardized outcome units</p></div>
+                  <div><p class="fig">&lt;0.01</p><p>post-adjustment standardized mean differences</p></div>
+                </div>
+                <p class="fine">These are observational estimates, not proof of an experimentally established causal effect.</p>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="project reveal" data-cat="ai">
+          <button class="project-head" type="button" id="p6-btn" aria-expanded="false" aria-controls="p6-body">
+            <span class="label">Deep Learning · Generative</span>
+            <span><span class="project-title">Denoising Diffusion Models</span><span class="project-sum">A U-Net diffusion model trained on GPU to generate CIFAR-10 images, reaching an FID of 17.8.</span></span>
+            <span class="toggle" aria-hidden="true"><svg class="icon" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>
+          </button>
+          <div class="project-body" id="p6-body" role="region" aria-labelledby="p6-btn">
+            <div class="project-inner"><div class="project-detail">
+              <div class="project-side">
+                <div class="tags"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">U-Net</span><span class="tag">Diffusion Models</span><span class="tag">GPU Training</span></div>
+                <p class="soon">Case study coming soon</p>
+              </div>
+              <div class="detail-grid">
+                <div><h4 class="label">Challenge</h4><p>Diffusion models generate images through an iterative denoising process. Implementing one means combining network architecture, training procedure, and generative-model evaluation.</p></div>
+                <div><h4 class="label">Approach</h4><p>I built a DDPM with a U-Net architecture, trained it on GPU, and evaluated it with Fréchet Inception Distance and bits per dimension, comparing against results reported in the original DDPM paper.</p></div>
+                <div class="mini">
+                  <div><p class="fig">17.8</p><p>reported FID on CIFAR-10</p></div>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">Experience</p>
+        <div>
+          <h2 class="h2" id="exp-title">University operations &amp; <em>healthcare analytics</em></h2>
+          <p class="intro">My work has focused on analyzing complex datasets, improving reporting processes, and helping teams access reliable information.</p>
+        </div>
+      </div>
+
+      <article class="job" id="exp-rutgers">
+        <div class="job-meta">
+          <p class="job-when">2025–Present · New Brunswick, NJ</p>
+          <h3 class="job-org">Rutgers University</h3>
+          <p class="job-role">Data Analyst</p>
+          <p class="label">Access and Disability Resources (RADR)</p>
+        </div>
+        <div class="job-body">
+          <p class="reveal">I analyze accommodation-related data to understand demand patterns and support operational reporting across campuses, preparing datasets, building dashboards, and making reporting workflows more consistent and efficient.</p>
+          <ul class="contrib">
+            <li class="reveal"><span>Analyzed accommodation trends covering <strong>more than 5,000 students</strong> across <strong>four Rutgers campuses</strong>.</span></li>
+            <li class="reveal"><span>Developed interactive <strong>Power BI dashboards</strong> and <strong>SQL datasets</strong> to communicate demand patterns to department heads.</span></li>
+            <li class="reveal"><span>Cleaned and standardized records while working within <strong>FERPA and ADA</strong> compliance requirements.</span></li>
+            <li class="reveal"><span>Automated recurring reporting workflows to reduce manual effort and improve reporting efficiency.</span></li>
+          </ul>
+          <div class="tags reveal"><span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Data Cleaning</span><span class="tag">Reporting Automation</span><span class="tag">Data Validation</span></div>
+        </div>
+      </article>
+
+      <article class="job" id="exp-accenture">
+        <div class="job-meta">
+          <p class="job-when">June 2023–July 2024</p>
+          <h3 class="job-org">Accenture Solutions Pvt. Ltd.</h3>
+          <p class="job-role">Application Analyst</p>
+          <p class="label">Healthcare analytics</p>
+        </div>
+        <div class="job-body">
+          <p class="reveal">I worked with healthcare claims and utilization data to support payer reporting, quality-measure monitoring, and recurring compliance reviews, and improved data-collection and reporting processes.</p>
+          <ul class="contrib">
+            <li class="reveal"><span>Analyzed <strong>Medicaid claims</strong> and utilization across <strong>five service lines</strong> to identify high-cost service patterns.</span></li>
+            <li class="reveal"><span>Summarized <strong>HEDIS</strong> quality-measure performance through a dashboard used by two internal teams.</span></li>
+            <li class="reveal"><span>Streamlined claims collection from two clinical systems using ICD-10/CPT coding, <strong>reducing turnaround time by 12%</strong>.</span></li>
+            <li class="reveal"><span>Delivered weekly cost and utilization reports for ongoing analytics and compliance review.</span></li>
+            <li class="reveal"><span>Improved a manual data-entry workflow, <strong>reducing processing time by 8%</strong> and reducing errors.</span></li>
+          </ul>
+          <div class="tags reveal"><span class="tag">Healthcare Analytics</span><span class="tag">Claims Data</span><span class="tag">Quality Measures</span><span class="tag">Process Improvement</span><span class="tag">Reporting</span></div>
+        </div>
+      </article>
+
+      <p class="closing reveal">A useful analysis should not only produce numbers. It should help people <em>understand what those numbers mean.</em></p>
+    </div>
+  </section>
+
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="label">Skills</p>
+        <div>
+          <h2 class="h2" id="skills-title">What I <em>work with</em></h2>
+          <p class="intro">Tools and techniques I use to analyze information, develop reports, and explore data-driven systems.</p>
+        </div>
+      </div>
+      <div>
+        <div class="skill reveal">
+          <h3>Data Analytics &amp; Business Intelligence</h3>
+          <div class="tags"><span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Microsoft Excel</span></div>
+          <p>Reports and dashboards that turn complex datasets into understandable KPIs, visualizations, and operational insights.</p>
+        </div>
+        <div class="skill reveal">
+          <h3>Programming &amp; Statistical Analysis</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">R</span><span class="tag">Statistical Modeling</span></div>
+          <p>Data cleaning, exploratory analysis, modeling, validation, and interpreting results.</p>
+        </div>
+        <div class="skill reveal">
+          <h3>Databases &amp; Data Engineering</h3>
+          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">Snowflake</span><span class="tag">BigQuery</span><span class="tag">ETL/ELT</span></div>
+          <p>Querying structured data, preparing datasets, working with databases, and supporting data pipelines.</p>
+        </div>
+        <div class="skill reveal">
+          <h3>Cloud &amp; Infrastructure</h3>
+          <div class="tags"><span class="tag">AWS</span><span class="tag">Google Cloud</span><span class="tag">Azure</span><span class="tag">Git</span><span class="tag">GitHub</span></div>
+          <p>Cloud and development tools for data storage, integration, version control, and analytical workflows.</p>
+        </div>
+        <div class="skill reveal">
+          <h3>Applied AI &amp; Machine Learning</h3>
+          <div class="tags"><span class="tag">Machine Learning</span><span class="tag">PyTorch</span><span class="tag">Hugging Face</span><span class="tag">LLM Fine-Tuning</span><span class="tag">RAG</span><span class="tag">Model Evaluation</span></div>
+          <p>Predictive modeling, causal inference, generative AI, and retrieval-based applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-inner">
+      <p class="label">Contact</p>
+      <h2 id="contact-title" class="reveal">Let's make sense of the <em>data.</em></h2>
+      <div class="contact-copy reveal">
+        <p class="sub">Good decisions begin with good questions.</p>
+        <p>I'm open to full-time Data Analyst and Business Intelligence opportunities, as well as conversations about healthcare analytics and applied AI. If my experience or projects align with what you're working on, I'd be glad to connect.</p>
+      </div>
+      <div class="email-row reveal">
+        <a class="email" id="email" href="mailto:datiransh@gmail.com">datiransh@gmail.com</a>
+        <div class="copy-wrap">
+          <button class="btn btn-light" type="button" id="copy-btn"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="8.5" height="8.5" rx="1.5"/><path d="M10.5 5V3.5A1.5 1.5 0 0 0 9 2H3.5A1.5 1.5 0 0 0 2 3.5V9a1.5 1.5 0 0 0 1.5 1.5H5"/></svg>Copy email</button>
+          <span id="copy-status" class="label" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="socials reveal">
+        <a class="btn btn-outline-light" href="https://www.linkedin.com/in/ansh-datir-b77395220" target="_blank" rel="noopener">Connect on LinkedIn <svg class="icon i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+        <a class="btn btn-outline-light" href="https://github.com/Ansh011001" target="_blank" rel="noopener">GitHub <svg class="icon i-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+      </div>
+      <footer class="foot">
+        <p>© 2026 Ansh Datir · Turning data into clear, useful insights.</p>
+        <a class="text-link" href="#top">Back to top <svg class="icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14V3M4 7l4-4 4 4"/></svg></a>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Scroll: progress bar, nav border, hero parallax */
+  var nav = document.getElementById('site-nav');
+  var bar = document.getElementById('progress-bar');
+  var heroImg = document.getElementById('hero-img');
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY || root.scrollTop;
+    var max = root.scrollHeight - root.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+    nav.classList.toggle('scrolled', y > 8);
+    if (!reduce && y < 1400) heroImg.style.setProperty('--py', (y * 0.1).toFixed(1) + 'px');
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  /* Mobile menu */
+  var menuBtn = document.getElementById('menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  function setMenu(open){
+    menu.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.textContent = open ? 'Close' : 'Menu';
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(menu.hidden); });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  menu.addEventListener('keydown', function(e){ if (e.key === 'Escape'){ setMenu(false); menuBtn.focus(); } });
+
+  /* Active section in the nav */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  if ('IntersectionObserver' in window){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          links.forEach(function(a){ a.setAttribute('aria-current', a.getAttribute('href') === '#' + en.target.id ? 'true' : 'false'); });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['about','work','experience','skills','contact'].forEach(function(id){ var el = document.getElementById(id); if (el) spy.observe(el); });
+  }
+
+  /* Project accordions */
+  var heads = Array.prototype.slice.call(document.querySelectorAll('.project-head'));
+  heads.forEach(function(btn){
+    var body = document.getElementById(btn.getAttribute('aria-controls'));
+    body.inert = true;
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      body.classList.toggle('open', !open);
+      body.inert = open;
+    });
+  });
+
+  /* Project filters */
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));
+  var count = document.getElementById('project-count');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      var f = chip.getAttribute('data-filter');
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', String(c === chip)); });
+      var shown = 0;
+      projects.forEach(function(p){
+        var show = f === 'all' || p.getAttribute('data-cat') === f;
+        var wasHidden = p.hidden;
+        p.hidden = !show;
+        if (show){
+          if (wasHidden && !reduce && p.animate){
+            p.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: shown * 70, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'backwards' });
+          }
+          shown++;
+        }
+      });
+      count.textContent = 'Showing ' + shown + (shown === 1 ? ' project' : ' projects');
+    });
+  });
+
+  /* Count-up figures, only for ones that start below the fold */
+  if (!reduce && 'IntersectionObserver' in window){
+    var nums = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+    var vh = window.innerHeight;
+    var counter = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        counter.unobserve(en.target);
+        var el = en.target, target = parseFloat(el.getAttribute('data-count')), start = null;
+        function step(t){
+          if (start === null) start = t;
+          var k = Math.min(1, (t - start) / 1300);
+          var eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = String(Math.round(target * eased));
+          if (k < 1) requestAnimationFrame(step);
+        }
+        el.textContent = '0';
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function(n){ if (n.getBoundingClientRect().top > vh) counter.observe(n); });
+  }
+
+  /* Copy email */
+  var copyBtn = document.getElementById('copy-btn');
+  var status = document.getElementById('copy-status');
+  var email = document.getElementById('email');
+  var clearT;
+  function say(msg){ status.textContent = msg; clearTimeout(clearT); clearT = setTimeout(function(){ status.textContent = ''; }, 2600); }
+  function selectEmail(){
+    var r = document.createRange(); r.selectNodeContents(email);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  copyBtn.addEventListener('click', function(){
+    var addr = 'datiransh@gmail.com';
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(function(){ say('Copied'); }, function(){ selectEmail(); say('Selected, press Ctrl+C'); });
+    } else { selectEmail(); say('Selected, press Ctrl+C'); }
+  });
+})();
+</script>
+
+</body></html>
